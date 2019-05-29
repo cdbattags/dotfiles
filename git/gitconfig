@@ -128,5 +128,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	name = Christian Battaglia
-	email = christian.d.battaglia@gmail.com
+  name = Christian Battaglia
+  email = christian.d.battaglia@gmail.com
