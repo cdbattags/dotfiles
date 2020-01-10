@@ -42,6 +42,13 @@ task :install_prezto do
   end
 end
 
+task :install_fish do
+  puts
+  puts "Installing fish"
+
+  run %{ ln -nfs "$HOME/.yadr/fish" "${ZDOTDIR:-$HOME}/.config" }
+end
+
 desc 'Updates the installation'
 task :update do
   Rake::Task["vundle_migration"].execute if needs_migration_to_vundle?
