@@ -46,7 +46,9 @@ task :install_fish do
   puts
   puts "Installing fish"
 
-  run %{ ln -nfs "$HOME/.yadr/fish" "${ZDOTDIR:-$HOME}/.config" }
+  run %{ mkdir -p "${ZDOTDIR:-$HOME}/.config" }
+
+  run %{ ln -sf "$HOME/.yadr/fish" "${ZDOTDIR:-$HOME}/.config/fish" }
 end
 
 desc 'Updates the installation'
