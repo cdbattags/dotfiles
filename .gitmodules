@@ -1,6 +1,6 @@
 [submodule "zsh/prezto"]
 	path = zsh/prezto
-	url = https://github.com/cdbattags/prezto.git
+	url = git@github.com:cdbattags/prezto.git
 [submodule "fish"]
 	path = fish
 	url = git@github.com:cdbattags/fish-config.git

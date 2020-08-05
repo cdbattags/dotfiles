@@ -46,6 +46,20 @@ task :install_fish do
   puts
   puts "Installing fish"
 
+  puts "> Installing oh-my-fish"
+  run %{ curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish }
+
+  puts "> Installing agnoster"
+  run %{ omf install agnoster }
+
+  puts "> Installing Powerline fonts"
+  run %{
+    git clone https://github.com/powerline/fonts.git ~ --depth=1 && \
+    cd ~/fonts && \
+    ./install.sh && \
+    rm -rf ~/fonts
+  }
+
   run %{ mkdir -p "${ZDOTDIR:-$HOME}/.config" }
 
   run %{ ln -sf "$HOME/.yadr/fish" "${ZDOTDIR:-$HOME}/.config/fish" }
